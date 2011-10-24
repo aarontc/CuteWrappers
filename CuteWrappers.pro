@@ -4,16 +4,24 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core
 
 TARGET = CuteWrappers
 TEMPLATE = lib
 
 
 SOURCES +=\
-    CuteSettings.cpp
+	CuteSettings.cpp
 
 HEADERS  += \
-    CuteSettings.h
+	CuteSettings.h
 
-FORMS    +=
+
+
+target.path = /usr/lib
+INSTALLS += target
+
+
+header_files.files = $$HEADERS
+header_files.path = /usr/include/CuteWrappers
+INSTALLS += header_files
