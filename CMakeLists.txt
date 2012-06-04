@@ -96,7 +96,7 @@ install(TARGETS CuteWrappers
 install(
 	FILES
 	${CuteWrappers_Headers}
-	DESTINATION ../include/CuteWrappers
+	DESTINATION include/CuteWrappers
 )
 
 
