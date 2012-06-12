@@ -47,43 +47,36 @@ else()
 	message(WARNING	"Only build CuteWrappers in Debug mode if you are doing development!")
 endif()
 
-
-
-
 set(
 	CuteWrappers_Sources
-	
+
 	CuteSettings.cpp
 )
 
 set(
 	CuteWrappers_Headers
-	
+
 	CuteSettings.h
 )
 
 set(
 	CuteWrappers_Forms
-	
 )
 
-QT4_WRAP_CPP(
-	CuteWrappers_Sources
-	
-	${CuteWrappers_Sources}
-)
-
-QT4_WRAP_UI(
-	CuteWrappers_Sources
-
-	${CuteWrappers_Forms}
-)
+qt4_wrap_cpp(CuteWrappers_Sources ${CuteWrappers_Headers})
+qt4_wrap_ui(CuteWrappers_Sources ${CuteWrappers_Forms})
 
 
 add_library(
 	CuteWrappers
+	SHARED
 
 	${CuteWrappers_Sources}
+)
+
+target_link_libraries(
+	CuteWrappers
+	${QT_LIBRARIES}
 )
 
 
