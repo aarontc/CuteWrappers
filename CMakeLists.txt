@@ -39,6 +39,7 @@ find_package(Qt4 4.8.1 COMPONENTS QtCore REQUIRED)
 include(UseQt4)
 enable_testing()
 
+
 # Allow the developer to select if Dynamic or Static libraries are built
 option(BUILD_SHARED_LIBS "Build Shared Libraries" OFF)
 # Set the LIB_TYPE variable to STATIC
