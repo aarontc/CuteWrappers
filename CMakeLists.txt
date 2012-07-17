@@ -27,8 +27,6 @@ if(NOT CMAKE_BUILD_TYPE)
 endif()
 
 
-message(STATUS "Building MadeByAI CuteWrappers ${CuteWrappers_VERSION} in ${CMAKE_BUILD_TYPE} mode" )
-
 
 # Treat link_directories as relative
 cmake_policy(SET CMP0015 NEW)
@@ -41,11 +39,25 @@ find_package(Qt4 4.8.1 COMPONENTS QtCore REQUIRED)
 include(UseQt4)
 enable_testing()
 
+# Allow the developer to select if Dynamic or Static libraries are built
+option(BUILD_SHARED_LIBS "Build Shared Libraries" OFF)
+# Set the LIB_TYPE variable to STATIC
+set(LIB_TYPE STATIC)
+if(BUILD_SHARED_LIBS)
+	# User wants to build Dynamic Libraries, so change the LIB_TYPE variable to CMake keyword 'SHARED'
+	set(LIB_TYPE SHARED)
+endif(BUILD_SHARED_LIBS)
+
+message(STATUS "Building MadeByAI CuteWrappers ${CuteWrappers_VERSION} in ${CMAKE_BUILD_TYPE} mode, with ${LIB_TYPE} libraries" )
+
+
 if(CMAKE_BUILD_TYPE MATCHES "^[Rr]elease$")
 	add_definitions(-DQT_NO_DEBUG_OUTPUT)
 else()
 	message(WARNING	"Only build CuteWrappers in Debug mode if you are doing development!")
 endif()
+
+
 
 add_subdirectory(src)
 

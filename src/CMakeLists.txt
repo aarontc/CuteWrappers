@@ -20,7 +20,7 @@ qt4_wrap_ui(CuteWrappers_Sources ${CuteWrappers_Forms})
 
 add_library(
 	CuteWrappers
-	SHARED
+	${LIB_TYPE}
 
 	${CuteWrappers_Sources}
 )
