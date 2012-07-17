@@ -25,6 +25,15 @@ add_library(
 	${CuteWrappers_Sources}
 )
 
+if(MSVC)
+	generate_export_header(CuteWrappers
+		BASE_NAME CuteWrappers
+		EXPORT_MACRO_NAME CuteWrappers_EXPORT
+		EXPORT_FILE_NAME CuteWrappers_Export.h
+		STATIC_DEFINE MyLibrary_STATIC_BUILD
+	)
+endif()
+
 target_link_libraries(
 	CuteWrappers
 	${QT_LIBRARIES}
