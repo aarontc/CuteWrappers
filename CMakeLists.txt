@@ -41,7 +41,7 @@ enable_testing()
 
 
 # Allow the developer to select if Dynamic or Static libraries are built
-option(BUILD_SHARED_LIBS "Build Shared Libraries" OFF)
+option(BUILD_SHARED_LIBS "Build Shared Libraries" ON)
 # Set the LIB_TYPE variable to STATIC
 set(LIB_TYPE STATIC)
 if(BUILD_SHARED_LIBS)
