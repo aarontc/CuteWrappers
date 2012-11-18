@@ -19,7 +19,7 @@ qt4_wrap_ui(CuteWrappers_Sources ${CuteWrappers_Forms})
 
 
 add_library(
-	CuteWrappers
+	CuteWrappers-${CuteWrappers_VERSION_MAJOR}.${CuteWrappers_VERSION_MINOR}
 	${LIB_TYPE}
 
 	${CuteWrappers_Sources}
@@ -35,12 +35,13 @@ if(MSVC)
 endif()
 
 target_link_libraries(
-	CuteWrappers
+	CuteWrappers-${CuteWrappers_VERSION_MAJOR}.${CuteWrappers_VERSION_MINOR}
 	${QT_LIBRARIES}
 )
 
 
-install(TARGETS CuteWrappers
+install(
+	TARGETS CuteWrappers-${CuteWrappers_VERSION_MAJOR}.${CuteWrappers_VERSION_MINOR}
 	LIBRARY DESTINATION lib COMPONENT libraries
 	ARCHIVE DESTINATION lib COMPONENT libraries
 )
