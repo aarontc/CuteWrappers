@@ -7,7 +7,7 @@ class CuteSettings : public QSettings {
 	Q_OBJECT
 
 	public:
-		CuteSettings();
+		CuteSettings(QObject* parent = 0);
 		virtual ~CuteSettings();
 		virtual void setValue(const QString& key, const QVariant& value);
 		virtual QVariant value(const QString& key, const QVariant& defaultValue = QVariant()) const;
