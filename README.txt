@@ -1,3 +1,0 @@
-This is a simple readme that needs filled in...
-
-Project home page: https://redmine.techtonium.com/projects/cutewrappers
